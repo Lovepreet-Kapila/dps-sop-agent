@@ -15,3 +15,11 @@ def generate_sop_endpoint(request: SOPRequest):
     """
     sop = generate_sop(request)
     return sop
+
+@app.get("/")
+def home():
+    return {
+        "message": "SOP Generator API is running.",
+        "docs": "/docs",
+        "generate_sop": "/generate_sop"
+    }
